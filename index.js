@@ -1,18 +1,20 @@
 // Importiere das Express-Modul
-const express = require("express")
-const path = require("path")
+const express = require("express");
+const path = require("path");
 
 // Erstelle eine Express-Anwendung
-const app = express()
-const PORT = process.env.PORT || 3000
+const app = express();
+
+// Versuche, den Port aus der Pterodactyl-Umgebungsvariable zu holen
+const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;
 
 // Stelle statische Dateien aus dem 'public'-Verzeichnis bereit
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "public")));
 
 // Route für die Hauptseite
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"))
-})
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 // API-Route für Serverinformationen
 app.get("/api/info", (req, res) => {
@@ -22,10 +24,10 @@ app.get("/api/info", (req, res) => {
     nodeVersion: process.version,
     uptime: process.uptime(),
     hostname: req.hostname,
-  })
-})
+  });
+});
 
 // Starte den Server
 app.listen(PORT, () => {
-  console.log(`Server läuft auf http://localhost:${PORT}`)
-})
+  console.log(`Server läuft auf http://localhost:${PORT}`);
+});
