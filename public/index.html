@@ -3,685 +3,188 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domain Default Page - Nebulite Hosting</title>
-    <meta name="description" content="Willkommen bei Nebulite Hosting - Ihr Partner für schnelles und zuverlässiges Webhosting.">
+    <title>Default Domain - Nebulite Hosting</title>
+    <meta name="description" content="Default Domain Page - Nebulite Hosting">
     <meta name="copyright" content="Copyright 2023-2025. Nebulite Hosting. All rights reserved.">
+    <!-- Import Google font - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #4361ee;
-            --primary-dark: #3a0ca3;
-            --secondary: #7209b7;
-            --accent: #f72585;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-            --success: #4cc9f0;
-        }
-        
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
         }
-        
+
+        html {
+            height: 100%;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
             margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-            overflow-x: hidden;
         }
-        
-        .particles-container {
+
+        .company-header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: float 15s infinite ease-in-out;
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            25% {
-                transform: translateY(-30px) translateX(15px);
-            }
-            50% {
-                transform: translateY(-15px) translateX(-15px);
-            }
-            75% {
-                transform: translateY(30px) translateX(10px);
-            }
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            animation: pulse 8s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.1;
-            }
-            50% {
-                transform: scale(1.05);
-                opacity: 0.2;
-            }
-        }
-        
-        .logo {
-            max-width: 250px;
-            margin: 0 auto 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .logo svg {
-            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-            transition: transform 0.3s ease;
-        }
-        
-        .logo svg:hover {
-            transform: scale(1.05);
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 30px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 3rem;
-            margin-top: -4rem;
-            position: relative;
-            z-index: 10;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-        }
-        
-        h1 {
-            font-size: 24px;
-            color: #444;
-            margin: 0 0 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark);
-            text-align: center;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 3px;
-        }
-        
-        .domain-info {
-            background-color: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .domain-container {
-            background: rgba(67, 97, 238, 0.05);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
+            top: 20px;
+            left: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            border: 1px dashed rgba(67, 97, 238, 0.3);
+            gap: 15px;
+            z-index: 100;
         }
-        
-        .domain-label {
-            font-size: 1rem;
-            color: var(--gray);
-            margin-bottom: 0.5rem;
-        }
-        
-        .domain {
-            font-weight: bold;
-            color: #3a86ff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--secondary);
-            position: relative;
-            padding: 0.5rem 1rem;
-            overflow: hidden;
-        }
-        
-        .domain::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-        
-        .domain:hover::before {
-            transform: translateX(0);
-        }
-        
-        p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        
-        .info {
-            margin: 20px 0;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .feature {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(114, 9, 183, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .feature:hover::before {
-            opacity: 1;
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .feature h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark);
-        }
-        
-        .feature p {
-            font-size: 0.95rem;
-            color: var(--gray);
-            margin-bottom: 0;
-        }
-        
-        .cta-container {
-            text-align: center;
-            margin: 3rem 0 1rem;
-        }
-        
-        .button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
+
+        .company-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            transition: opacity 0.2s;
         }
-        
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            z-index: -1;
-            transition: opacity 0.3s ease;
-            opacity: 0;
+
+        .company-link:hover {
+            opacity: 0.9;
         }
-        
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+
+        .company-logo {
+            font-size: 32px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
         }
-        
-        .button:hover::before {
-            opacity: 1;
+
+        .company-name {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-        
-        .status-container {
+
+        .container {
+            margin-top: 8em;
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 2rem 0;
         }
-        
-        .status-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--success);
-            margin-right: 0.5rem;
-            position: relative;
-        }
-        
-        .status-indicator::before {
-            content: '';
-            position: absolute;
+
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-color: var(--success);
-            animation: pulse-status 2s infinite;
+            z-index: -1;
         }
-        
-        @keyframes pulse-status {
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+
+        .bg3 {
+            animation-duration: 5s;
+        }
+
+        .wrapper {
+            width: 600px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .domain-title {
+            color: #2d3748;
+            margin: 0 0 20px 0;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .domain-name {
+            color: #09f;
+            font-weight: 600;
+        }
+
+        .domain-description {
+            color: #718096;
+            margin: 0 0 20px 0;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #718096;
+        }
+
+        @keyframes slide {
             0% {
-                transform: scale(1);
-                opacity: 0.7;
-            }
-            70% {
-                transform: scale(2);
-                opacity: 0;
+                transform: translateX(-25%);
             }
             100% {
-                transform: scale(1);
-                opacity: 0;
+                transform: translateX(25%);
             }
         }
-        
-        .status-text {
-            font-size: 1rem;
-            color: var(--gray);
-        }
-        
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            background: var(--dark);
-            color: white;
-            padding: 3rem 0;
-            margin-top: 4rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .footer-logo {
-            margin-bottom: 2rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-link {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: white;
-        }
-        
-        .copyright {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-        
-        .server-info {
-            font-size: 12px;
-            color: #999;
-            margin-top: 10px;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.4);
-        }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
-            .card {
-                padding: 2rem;
-                margin-top: -2rem;
+            .wrapper {
+                width: 90%;
+                padding: 30px;
             }
             
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .domain {
-                font-size: 1.4rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .button {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-        
-        /* Loading animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-        
-        .loading.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(67, 97, 238, 0.2);
-            border-radius: 50%;
-            border-top-color: var(--primary);
-            animation: spin 1s ease-in-out infinite;
-        }
-        
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        /* Typing effect */
-        .typing-effect::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
+            .domain-title {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="loading">
-        <div class="loading-spinner"></div>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <div class="company-header">
+        <a href="#" class="company-link">
+            <div class="company-logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="white"/>
+                    <path d="M8 8H32C34.2091 8 36 9.79086 36 12V28C36 30.2091 34.2091 32 32 32H8C5.79086 32 4 30.2091 4 28V12C4 9.79086 5.79086 8 8 8Z" fill="#09f"/>
+                    <path d="M12 16L16 12H20L24 16L20 20H16L12 16Z" fill="white"/>
+                </svg>
+            </div>
+            <h1 class="company-name">NBH</h1>
+        </a>
     </div>
-
-    <div class="particles-container" id="particles-container"></div>
-
-    <header class="header">
-        <div class="logo">
-            <svg width="250" height="60" viewBox="0 0 250 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="15" width="50" height="30" rx="5" fill="#3a86ff"/>
-                <rect x="60" y="15" width="160" height="30" rx="5" fill="#8338ec"/>
-                <text x="70" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="white">NEBULITE HOSTING</text>
-            </svg>
-        </div>
-        <h1>Domain Default Page</h1>
-    </header>
 
     <div class="container">
-        <div class="card">
-            <h1 class="typing-effect">Domain Default Page</h1>
-            
-            <div class="domain-info">
-                Diese Seite wird angezeigt für <span class="domain" id="domain-name"></span>
-            </div>
-
-            <div class="info">
-                <p>Dies ist eine Standard-Webseite, die automatisch für neu konfigurierte Domains auf Nebulite Hosting erstellt wurde. Wenn Sie der Inhaber dieser Domain sind, können Sie diese Seite durch Ihre eigenen Inhalte ersetzen.</p>
-            
-                <p>Um Ihre eigene Webseite hochzuladen, verwenden Sie bitte FTP oder das Webhosting-Kontrollpanel.</p>
-            </div>
-            
-            <div class="status-container">
-                <div class="status-indicator"></div>
-                <div class="status-text">Server Status: <span id="status">Online</span></div>
-            </div>
-            
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Blitzschnelle Performance</h3>
-                    <p>Unsere Server sind auf Geschwindigkeit optimiert, damit Ihre Webseite immer schnell lädt.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Maximale Sicherheit</h3>
-                    <p>Wir schützen Ihre Daten mit modernsten Sicherheitsmaßnahmen und regelmäßigen Backups.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">⚙️</div>
-                    <h3>Einfache Verwaltung</h3>
-                    <p>Unser benutzerfreundliches Control Panel macht die Verwaltung Ihrer Webseite zum Kinderspiel.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">🔌</div>
-                    <h3>99.9% Uptime</h3>
-                    <p>Wir garantieren eine Verfügbarkeit von 99.9%, damit Ihre Webseite immer erreichbar ist.</p>
-                </div>
-            </div>
-            
-            <div class="cta-container">
-                <a href="#" class="button">Zum Kundenbereich</a>
+        <div class="wrapper">
+            <h2 class="domain-title">Default Webseite für <span class="domain-name" id="domain-name"></span></h2>
+            <p class="domain-description">
+                Dies ist eine Standard-Webseite, die automatisch für diese Domain generiert wurde von Nebulite Hosting.
+            </p>
+            <p class="domain-description">
+                Wenn Sie der Besitzer dieser Domain sind, können Sie diese Seite durch Ihre eigenen Inhalte ersetzen.
+                Laden Sie Ihre Dateien einfach über FTP oder das Webhosting-Kontrollpanel hoch.
+            </p>
+            <div class="footer">
+                © 2025 Nebulite Hosting. Alle Rechte vorbehalten.
             </div>
         </div>
     </div>
-    
-    <footer class="footer">
-        <p>© 2025 Nebulite Hosting. Alle Rechte vorbehalten.</p>
-        <div class="server-info" id="server-info">Server: Nebulite Hosting | Powered by Node.js</div>
-    </footer>
 
     <script>
         // Display the current domain name
         document.getElementById('domain-name').textContent = location.hostname;
-        
-        // Display server info
-        const serverInfo = document.getElementById('server-info');
-        const date = new Date();
-        serverInfo.textContent += ` | ${date.toLocaleDateString()}`;
-        
-        // Create particles
-        function createParticles() {
-            const container = document.getElementById('particles-container');
-            const colors = ['#4361ee', '#3a0ca3', '#7209b7', '#f72585', '#4cc9f0'];
-            
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random properties
-                const size = Math.random() * 30 + 10;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.backgroundColor = color;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
-                
-                container.appendChild(particle);
-            }
-        }
-        
-        // Typing effect
-        function typeEffect() {
-            const element = document.querySelector('.typing-effect');
-            const text = element.textContent;
-            element.textContent = '';
-            element.classList.add('typing-effect');
-            
-            let i = 0;
-            const interval = setInterval(() => {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(interval);
-                    element.classList.remove('typing-effect');
-                }
-            }, 100);
-        }
-        
-        // Server info
-        function fetchServerInfo() {
-            const serverInfo = document.getElementById('server-info');
-            serverInfo.textContent = `Server: Nebulite Hosting | Node.js: ${navigator.userAgent} | Uptime: Active`;
-        }
-        
-        // Loading animation
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.loading').classList.add('hidden');
-                createParticles();
-                typeEffect();
-                fetchServerInfo();
-            }, 1000);
-        });
     </script>
 </body>
 </html>
