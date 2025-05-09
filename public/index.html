@@ -2,92 +2,691 @@
 <html lang="de">
 <head>
     <meta charset="utf-8">
-    <title>Nebulite Hosting - Default Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebulite Hosting - Premium Webhosting</title>
+    <meta name="description" content="Willkommen bei Nebulite Hosting - Ihr Partner für schnelles und zuverlässiges Webhosting.">
     <meta name="copyright" content="Copyright 2023-2025. Nebulite Hosting. All rights reserved.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #4cc9f0;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-30px) translateX(15px);
+            }
+            50% {
+                transform: translateY(-15px) translateX(-15px);
+            }
+            75% {
+                transform: translateY(30px) translateX(10px);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 8s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.2;
+            }
+        }
+        
+        .logo {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            margin-bottom: 1rem;
+        }
+        
+        .logo svg {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
+        }
+        
+        .logo svg:hover {
+            transform: scale(1.05);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+            margin-top: -4rem;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 3px;
+        }
+        
+        .domain-container {
+            background: rgba(67, 97, 238, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 1px dashed rgba(67, 97, 238, 0.3);
+        }
+        
+        .domain-label {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .domain {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            position: relative;
+            padding: 0.5rem 1rem;
+            overflow: hidden;
+        }
+        
+        .domain::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .domain:hover::before {
+            transform: translateX(0);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
             text-align: center;
         }
-        .container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 600px;
-            width: 90%;
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
-        .logo {
-            margin-bottom: 20px;
+        
+        .feature {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .logo img {
-            height: 60px;
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #3a86ff;
-            margin-bottom: 10px;
-            font-size: 28px;
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(114, 9, 183, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        
+        .feature:hover::before {
+            opacity: 1;
         }
-        .domain {
-            font-weight: bold;
-            color: #8338ec;
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #6c757d;
+        
+        .feature h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
         }
+        
+        .feature p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin: 3rem 0 1rem;
+        }
+        
         .button {
             display: inline-block;
-            background-color: #3a86ff;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
+        
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        
         .button:hover {
-            background-color: #2a75e0;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        }
+        
+        .button:hover::before {
+            opacity: 1;
+        }
+        
+        .status-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--success);
+            margin-right: 0.5rem;
+            position: relative;
+        }
+        
+        .status-indicator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--success);
+            animation: pulse-status 2s infinite;
+        }
+        
+        @keyframes pulse-status {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(2);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .status-text {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        .server-info {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                padding: 2rem;
+                margin-top: -2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .domain {
+                font-size: 1.4rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(67, 97, 238, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Typing effect */
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="particles-container" id="particles-container"></div>
+
+    <header class="header">
         <div class="logo">
-            <svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 10H40C45.5228 10 50 14.4772 50 20V40C50 45.5228 45.5228 50 40 50H20C14.4772 50 10 45.5228 10 40V20C10 14.4772 14.4772 10 20 10Z" fill="#3a86ff"/>
-                <path d="M60 15H160C165.523 15 170 19.4772 170 25V35C170 40.5228 165.523 45 160 45H60C54.4772 45 50 40.5228 50 35V25C50 19.4772 54.4772 15 60 15Z" fill="#8338ec"/>
-                <text x="65" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="white">NEBULITE</text>
+            <svg width="280" height="80" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 20H60C68.2843 20 75 26.7157 75 35V45C75 53.2843 68.2843 60 60 60H30C21.7157 60 15 53.2843 15 45V35C15 26.7157 21.7157 20 30 20Z" fill="url(#paint0_linear)"/>
+                <path d="M80 25H230C238.284 25 245 31.7157 245 40V40C245 48.2843 238.284 55 230 55H80C71.7157 55 65 48.2843 65 40V40C65 31.7157 71.7157 25 80 25Z" fill="url(#paint1_linear)"/>
+                <path d="M90 37.5L95 32.5H100L105 37.5L100 42.5H95L90 37.5Z" fill="white"/>
+                <path d="M110 32.5H115V47.5H110V32.5Z" fill="white"/>
+                <path d="M125 32.5H120V47.5H135V42.5H125V32.5Z" fill="white"/>
+                <path d="M140 32.5H145V42.5H155V32.5H160V47.5H140V32.5Z" fill="white"/>
+                <path d="M165 32.5H180V37.5H170V38.5H180V47.5H165V42.5H175V41.5H165V32.5Z" fill="white"/>
+                <path d="M185 32.5H190V47.5H185V32.5Z" fill="white"/>
+                <path d="M195 32.5H210V37.5H200V38.5H210V47.5H195V42.5H205V41.5H195V32.5Z" fill="white"/>
+                <defs>
+                    <linearGradient id="paint0_linear" x1="15" y1="20" x2="75" y2="60" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4361EE"/>
+                        <stop offset="1" stop-color="#3A0CA3"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear" x1="65" y1="25" x2="245" y2="55" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#7209B7"/>
+                        <stop offset="1" stop-color="#F72585"/>
+                    </linearGradient>
+                </defs>
             </svg>
         </div>
-        <h1>Willkommen bei Nebulite Hosting</h1>
-        <p>Dies ist eine Standard-Webseite für <span class="domain" id="domain"></span>, erstellt von Nebulite Hosting.</p>
-        <p>Wenn Sie der Besitzer dieser Domain sind, können Sie diese Seite mit Ihren eigenen Inhalten ersetzen.</p>
-        <a href="#" class="button">Zum Kundenbereich</a>
-        <div class="footer">
-            Copyright © 2025 Nebulite Hosting. Alle Rechte vorbehalten.
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1 class="typing-effect">Willkommen bei Nebulite Hosting</h1>
+            
+            <p>Entdecken Sie die Zukunft des Webhostings mit unseren leistungsstarken und zuverlässigen Hosting-Lösungen.</p>
+            
+            <div class="domain-container">
+                <div class="domain-label">Diese Seite wird gehostet auf:</div>
+                <div class="domain" id="domain"></div>
+            </div>
+            
+            <div class="status-container">
+                <div class="status-indicator"></div>
+                <div class="status-text">Server Status: <span id="status">Online</span></div>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Blitzschnelle Performance</h3>
+                    <p>Unsere Server sind auf Geschwindigkeit optimiert, damit Ihre Webseite immer schnell lädt.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Maximale Sicherheit</h3>
+                    <p>Wir schützen Ihre Daten mit modernsten Sicherheitsmaßnahmen und regelmäßigen Backups.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Einfache Verwaltung</h3>
+                    <p>Unser benutzerfreundliches Control Panel macht die Verwaltung Ihrer Webseite zum Kinderspiel.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔌</div>
+                    <h3>99.9% Uptime</h3>
+                    <p>Wir garantieren eine Verfügbarkeit von 99.9%, damit Ihre Webseite immer erreichbar ist.</p>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="#" class="button">Zum Kundenbereich</a>
+            </div>
         </div>
     </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg width="180" height="50" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 20H60C68.2843 20 75 26.7157 75 35V45C75 53.2843 68.2843 60 60 60H30C21.7157 60 15 53.2843 15 45V35C15 26.7157 21.7157 20 30 20Z" fill="url(#paint0_linear)"/>
+                    <path d="M80 25H230C238.284 25 245 31.7157 245 40V40C245 48.2843 238.284 55 230 55H80C71.7157 55 65 48.2843 65 40V40C65 31.7157 71.7157 25 80 25Z" fill="url(#paint1_linear)"/>
+                    <path d="M90 37.5L95 32.5H100L105 37.5L100 42.5H95L90 37.5Z" fill="white"/>
+                    <path d="M110 32.5H115V47.5H110V32.5Z" fill="white"/>
+                    <path d="M125 32.5H120V47.5H135V42.5H125V32.5Z" fill="white"/>
+                    <path d="M140 32.5H145V42.5H155V32.5H160V47.5H140V32.5Z" fill="white"/>
+                    <path d="M165 32.5H180V37.5H170V38.5H180V47.5H165V42.5H175V41.5H165V32.5Z" fill="white"/>
+                    <path d="M185 32.5H190V47.5H185V32.5Z" fill="white"/>
+                    <path d="M195 32.5H210V37.5H200V38.5H210V47.5H195V42.5H205V41.5H195V32.5Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="15" y1="20" x2="75" y2="60" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4361EE"/>
+                            <stop offset="1" stop-color="#3A0CA3"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear" x1="65" y1="25" x2="245" y2="55" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#7209B7"/>
+                            <stop offset="1" stop-color="#F72585"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#" class="footer-link">Hosting-Pakete</a>
+                <a href="#" class="footer-link">Über uns</a>
+                <a href="#" class="footer-link">Support</a>
+                <a href="#" class="footer-link">Kontakt</a>
+                <a href="#" class="footer-link">AGB</a>
+                <a href="#" class="footer-link">Datenschutz</a>
+            </div>
+            
+            <div class="copyright">
+                Copyright © 2025 Nebulite Hosting. Alle Rechte vorbehalten.
+            </div>
+            
+            <div class="server-info" id="server-info"></div>
+        </div>
+    </footer>
 
     <script>
         // Display the current domain name
         document.getElementById('domain').textContent = location.hostname;
+        
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const colors = ['#4361ee', '#3a0ca3', '#7209b7', '#f72585', '#4cc9f0'];
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 30 + 10;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = color;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Typing effect
+        function typeEffect() {
+            const element = document.querySelector('.typing-effect');
+            const text = element.textContent;
+            element.textContent = '';
+            element.classList.add('typing-effect');
+            
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    element.classList.remove('typing-effect');
+                }
+            }, 100);
+        }
+        
+        // Server info
+        function fetchServerInfo() {
+            const serverInfo = document.getElementById('server-info');
+            serverInfo.textContent = `Server: Nebulite Hosting | Node.js: ${navigator.userAgent} | Uptime: Active`;
+        }
+        
+        // Loading animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loading').classList.add('hidden');
+                createParticles();
+                typeEffect();
+                fetchServerInfo();
+            }, 1000);
+        });
     </script>
 </body>
 </html>
