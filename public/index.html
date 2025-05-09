@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nebulite Hosting - Premium Webhosting</title>
+    <title>Domain Default Page - Nebulite Hosting</title>
     <meta name="description" content="Willkommen bei Nebulite Hosting - Ihr Partner für schnelles und zuverlässiges Webhosting.">
     <meta name="copyright" content="Copyright 2023-2025. Nebulite Hosting. All rights reserved.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,11 +28,12 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            line-height: 1.6;
             overflow-x: hidden;
         }
         
@@ -69,10 +70,13 @@
         }
         
         .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 1.5rem;
-            text-align: center;
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -101,6 +105,8 @@
         }
         
         .logo {
+            max-width: 250px;
+            margin: 0 auto 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -117,6 +123,13 @@
         }
         
         .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
@@ -150,6 +163,9 @@
         }
         
         h1 {
+            font-size: 24px;
+            color: #444;
+            margin: 0 0 10px;
             font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
@@ -171,6 +187,15 @@
             border-radius: 3px;
         }
         
+        .domain-info {
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
         .domain-container {
             background: rgba(67, 97, 238, 0.05);
             border-radius: 8px;
@@ -190,6 +215,8 @@
         }
         
         .domain {
+            font-weight: bold;
+            color: #3a86ff;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 1.8rem;
@@ -221,6 +248,10 @@
             color: var(--gray);
             margin-bottom: 1.5rem;
             text-align: center;
+        }
+        
+        .info {
+            margin: 20px 0;
         }
         
         .features {
@@ -378,6 +409,12 @@
         }
         
         .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
             background: var(--dark);
             color: white;
             padding: 3rem 0;
@@ -419,6 +456,9 @@
         }
         
         .server-info {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
             margin-top: 1rem;
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.4);
@@ -509,39 +549,27 @@
 
     <header class="header">
         <div class="logo">
-            <svg width="280" height="80" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 20H60C68.2843 20 75 26.7157 75 35V45C75 53.2843 68.2843 60 60 60H30C21.7157 60 15 53.2843 15 45V35C15 26.7157 21.7157 20 30 20Z" fill="url(#paint0_linear)"/>
-                <path d="M80 25H230C238.284 25 245 31.7157 245 40V40C245 48.2843 238.284 55 230 55H80C71.7157 55 65 48.2843 65 40V40C65 31.7157 71.7157 25 80 25Z" fill="url(#paint1_linear)"/>
-                <path d="M90 37.5L95 32.5H100L105 37.5L100 42.5H95L90 37.5Z" fill="white"/>
-                <path d="M110 32.5H115V47.5H110V32.5Z" fill="white"/>
-                <path d="M125 32.5H120V47.5H135V42.5H125V32.5Z" fill="white"/>
-                <path d="M140 32.5H145V42.5H155V32.5H160V47.5H140V32.5Z" fill="white"/>
-                <path d="M165 32.5H180V37.5H170V38.5H180V47.5H165V42.5H175V41.5H165V32.5Z" fill="white"/>
-                <path d="M185 32.5H190V47.5H185V32.5Z" fill="white"/>
-                <path d="M195 32.5H210V37.5H200V38.5H210V47.5H195V42.5H205V41.5H195V32.5Z" fill="white"/>
-                <defs>
-                    <linearGradient id="paint0_linear" x1="15" y1="20" x2="75" y2="60" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#4361EE"/>
-                        <stop offset="1" stop-color="#3A0CA3"/>
-                    </linearGradient>
-                    <linearGradient id="paint1_linear" x1="65" y1="25" x2="245" y2="55" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#7209B7"/>
-                        <stop offset="1" stop-color="#F72585"/>
-                    </linearGradient>
-                </defs>
+            <svg width="250" height="60" viewBox="0 0 250 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="15" width="50" height="30" rx="5" fill="#3a86ff"/>
+                <rect x="60" y="15" width="160" height="30" rx="5" fill="#8338ec"/>
+                <text x="70" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="white">NEBULITE HOSTING</text>
             </svg>
         </div>
+        <h1>Domain Default Page</h1>
     </header>
 
     <div class="container">
         <div class="card">
-            <h1 class="typing-effect">Willkommen bei Nebulite Hosting</h1>
+            <h1 class="typing-effect">Domain Default Page</h1>
             
-            <p>Entdecken Sie die Zukunft des Webhostings mit unseren leistungsstarken und zuverlässigen Hosting-Lösungen.</p>
+            <div class="domain-info">
+                Diese Seite wird angezeigt für <span class="domain" id="domain-name"></span>
+            </div>
+
+            <div class="info">
+                <p>Dies ist eine Standard-Webseite, die automatisch für neu konfigurierte Domains auf Nebulite Hosting erstellt wurde. Wenn Sie der Inhaber dieser Domain sind, können Sie diese Seite durch Ihre eigenen Inhalte ersetzen.</p>
             
-            <div class="domain-container">
-                <div class="domain-label">Diese Seite wird gehostet auf:</div>
-                <div class="domain" id="domain"></div>
+                <p>Um Ihre eigene Webseite hochzuladen, verwenden Sie bitte FTP oder das Webhosting-Kontrollpanel.</p>
             </div>
             
             <div class="status-container">
@@ -582,51 +610,18 @@
     </div>
     
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <svg width="180" height="50" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30 20H60C68.2843 20 75 26.7157 75 35V45C75 53.2843 68.2843 60 60 60H30C21.7157 60 15 53.2843 15 45V35C15 26.7157 21.7157 20 30 20Z" fill="url(#paint0_linear)"/>
-                    <path d="M80 25H230C238.284 25 245 31.7157 245 40V40C245 48.2843 238.284 55 230 55H80C71.7157 55 65 48.2843 65 40V40C65 31.7157 71.7157 25 80 25Z" fill="url(#paint1_linear)"/>
-                    <path d="M90 37.5L95 32.5H100L105 37.5L100 42.5H95L90 37.5Z" fill="white"/>
-                    <path d="M110 32.5H115V47.5H110V32.5Z" fill="white"/>
-                    <path d="M125 32.5H120V47.5H135V42.5H125V32.5Z" fill="white"/>
-                    <path d="M140 32.5H145V42.5H155V32.5H160V47.5H140V32.5Z" fill="white"/>
-                    <path d="M165 32.5H180V37.5H170V38.5H180V47.5H165V42.5H175V41.5H165V32.5Z" fill="white"/>
-                    <path d="M185 32.5H190V47.5H185V32.5Z" fill="white"/>
-                    <path d="M195 32.5H210V37.5H200V38.5H210V47.5H195V42.5H205V41.5H195V32.5Z" fill="white"/>
-                    <defs>
-                        <linearGradient id="paint0_linear" x1="15" y1="20" x2="75" y2="60" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#4361EE"/>
-                            <stop offset="1" stop-color="#3A0CA3"/>
-                        </linearGradient>
-                        <linearGradient id="paint1_linear" x1="65" y1="25" x2="245" y2="55" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#7209B7"/>
-                            <stop offset="1" stop-color="#F72585"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
-            
-            <div class="footer-links">
-                <a href="#" class="footer-link">Hosting-Pakete</a>
-                <a href="#" class="footer-link">Über uns</a>
-                <a href="#" class="footer-link">Support</a>
-                <a href="#" class="footer-link">Kontakt</a>
-                <a href="#" class="footer-link">AGB</a>
-                <a href="#" class="footer-link">Datenschutz</a>
-            </div>
-            
-            <div class="copyright">
-                Copyright © 2025 Nebulite Hosting. Alle Rechte vorbehalten.
-            </div>
-            
-            <div class="server-info" id="server-info"></div>
-        </div>
+        <p>© 2025 Nebulite Hosting. Alle Rechte vorbehalten.</p>
+        <div class="server-info" id="server-info">Server: Nebulite Hosting | Powered by Node.js</div>
     </footer>
 
     <script>
         // Display the current domain name
-        document.getElementById('domain').textContent = location.hostname;
+        document.getElementById('domain-name').textContent = location.hostname;
+        
+        // Display server info
+        const serverInfo = document.getElementById('server-info');
+        const date = new Date();
+        serverInfo.textContent += ` | ${date.toLocaleDateString()}`;
         
         // Create particles
         function createParticles() {
