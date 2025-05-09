@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Nebulite Hosting - Default Page</title>
+    <meta name="copyright" content="Copyright 2023-2025. Nebulite Hosting. All rights reserved.">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            height: 60px;
+        }
+        h1 {
+            color: #3a86ff;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .domain {
+            font-weight: bold;
+            color: #8338ec;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3a86ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #2a75e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 10H40C45.5228 10 50 14.4772 50 20V40C50 45.5228 45.5228 50 40 50H20C14.4772 50 10 45.5228 10 40V20C10 14.4772 14.4772 10 20 10Z" fill="#3a86ff"/>
+                <path d="M60 15H160C165.523 15 170 19.4772 170 25V35C170 40.5228 165.523 45 160 45H60C54.4772 45 50 40.5228 50 35V25C50 19.4772 54.4772 15 60 15Z" fill="#8338ec"/>
+                <text x="65" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="white">NEBULITE</text>
+            </svg>
+        </div>
+        <h1>Willkommen bei Nebulite Hosting</h1>
+        <p>Dies ist eine Standard-Webseite für <span class="domain" id="domain"></span>, erstellt von Nebulite Hosting.</p>
+        <p>Wenn Sie der Besitzer dieser Domain sind, können Sie diese Seite mit Ihren eigenen Inhalten ersetzen.</p>
+        <a href="#" class="button">Zum Kundenbereich</a>
+        <div class="footer">
+            Copyright © 2025 Nebulite Hosting. Alle Rechte vorbehalten.
+        </div>
+    </div>
+
+    <script>
+        // Display the current domain name
+        document.getElementById('domain').textContent = location.hostname;
+    </script>
+</body>
+</html>
