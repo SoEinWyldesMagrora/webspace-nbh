@@ -1,0 +1,31 @@
+// Importiere das Express-Modul
+const express = require("express")
+const path = require("path")
+
+// Erstelle eine Express-Anwendung
+const app = express()
+const PORT = process.env.PORT || 3000
+
+// Stelle statische Dateien aus dem 'public'-Verzeichnis bereit
+app.use(express.static(path.join(__dirname, "public")))
+
+// Route für die Hauptseite
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"))
+})
+
+// API-Route für Serverinformationen
+app.get("/api/info", (req, res) => {
+  res.json({
+    server: "Nebulite Hosting",
+    version: "1.0.0",
+    nodeVersion: process.version,
+    uptime: process.uptime(),
+    hostname: req.hostname,
+  })
+})
+
+// Starte den Server
+app.listen(PORT, () => {
+  console.log(`Server läuft auf http://localhost:${PORT}`)
+})
